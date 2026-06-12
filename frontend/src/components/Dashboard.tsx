@@ -50,7 +50,7 @@ export function Dashboard({ wedding, guests, setWedding, addGuest, onBack, onPre
   return (
     <div style={{ minHeight: "100vh", background: "var(--parchment)" }}>
       {/* Top bar */}
-      <div style={{ background: "var(--charcoal)", padding: "0 32px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 60 }}>
+      <div className="dashboard-topbar" style={{ background: "var(--charcoal)", padding: "0 32px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 60 }}>
         <span className="serif" style={{ color: "var(--white)", fontSize: 22, fontStyle: "italic" }}>Vow & Bloom</span>
         <div className="row">
           <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 12, letterSpacing: 1 }}>Couple Dashboard</span>
@@ -75,7 +75,7 @@ export function Dashboard({ wedding, guests, setWedding, addGuest, onBack, onPre
         </div>
 
         {/* Tab nav */}
-        <div className="row" style={{ gap: 0, marginBottom: 24, borderBottom: "1px solid var(--border)" }}>
+        <div className="row dashboard-nav" style={{ gap: 0, marginBottom: 24, borderBottom: "1px solid var(--border)" }}>
           {[["event", "Wedding Details"], ["guests", "Guest List"], ["add", "Add Guest"]].map(([key, label]) => (
             <button key={key} onClick={() => setTab(key)} style={{
               background: "none", border: "none", cursor: "pointer", padding: "12px 20px",
@@ -157,9 +157,9 @@ export function Dashboard({ wedding, guests, setWedding, addGuest, onBack, onPre
                 </div>
               </div>
 
-              <div style={{ display: "flex", justifyContent: "flex-end", gap: 10, marginTop: 8 }}>
-                <button className="btn btn-outline" onClick={() => onPreview(guests[0]?.token)}>Preview Guest View</button>
-                <button className="btn btn-gold" onClick={handleSaveEvent} disabled={saving}>
+              <div style={{ display: "flex", justifyContent: "flex-end", gap: 10, marginTop: 8, flexWrap: "wrap" }}>
+                <button className="btn btn-outline mobile-full-btn" onClick={() => onPreview(guests[0]?.token)}>Preview Guest View</button>
+                <button className="btn btn-gold mobile-full-btn" onClick={handleSaveEvent} disabled={saving}>
                   {saving ? "Saving…" : "Save Changes"}
                 </button>
               </div>
@@ -229,7 +229,7 @@ export function Dashboard({ wedding, guests, setWedding, addGuest, onBack, onPre
                   {window.location.origin}/invite/<span style={{ color: "var(--charcoal)" }}>{newGuestName ? uuid().slice(0, 8) : "xxxxxxxx"}</span>
                 </code>
               </div>
-              <button className="btn btn-gold" onClick={handleAddGuest} style={{ alignSelf: "flex-start" }}>
+              <button className="btn btn-gold mobile-full-btn" onClick={handleAddGuest} style={{ alignSelf: "flex-start" }}>
                 Generate Invitation Link
               </button>
             </div>
