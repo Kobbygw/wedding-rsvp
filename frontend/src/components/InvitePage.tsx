@@ -89,6 +89,9 @@ export function InvitePage({ wedding, guest, updateGuest, onBack, showToast, isP
           <p className="fade-up" style={{ fontSize: 13, opacity: 0.65, marginTop: 4, animationDelay: "0.45s" }}>
             {wedding.location}
           </p>
+          <p className="fade-up" style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", opacity: 0.8, marginTop: 16, animationDelay: "0.55s", color: "var(--gold-light)", fontWeight: 500 }}>
+            Dress Code: All White
+          </p>
         </div>
       </div>
 
